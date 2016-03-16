@@ -1,6 +1,6 @@
 ## runitsvMisc.R test suite
 ## by Ph. Grosjean <phgrosjean@sciviews.org>
-## run it simply by example(unitTests.svMisc)
+## run it simply by example(unitTests.svMisc) TODO: adapt this!
 
 ## The test cases
 .setUp <- function () {}
