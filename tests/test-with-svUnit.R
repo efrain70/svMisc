@@ -2,7 +2,7 @@
 ## Moreover, nothing is printed in case of success, while we would like a succinct report
 ## TODO: check if warnings are not converted into errors during R CMD check tests
 library(svUnit)
+library(svMisc)
 clearLog()
 res <- capture.output(runTest(svSuite("package:svMisc"), "svMisc"))
-print(table(stats(Log())$kind))
 errorLog()
