@@ -12,10 +12,12 @@
 \author{Philippe Grosjean (\email{phgrosjean@sciviews.org})}
 
 \examples{
+\donttest{
 if (require(svUnit)) {
     clearLog()
-    runTest(svSuite("package:svMisc"), "svMisc")
+    res <- capture.output(runTest(svSuite("package:svMisc"), "svMisc"))
     errorLog()
+}
 }
 }
 

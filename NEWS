@@ -1,5 +1,10 @@
 = svMisc News
 
+== Changes in svMisc 0.9-71
+
+* Code added to make svUnit tests compatibles with R Studio and devtools::test().
+
+
 == Changes in svMisc 0.9-70
 
 * Deprecated functions Args(), CallTip(), clipsource(), Complete(),
