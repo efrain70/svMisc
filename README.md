@@ -1,7 +1,7 @@
 # svMisc
 
 [![Linux & OSX Build Status](https://travis-ci.org/SciViews/svMisc.svg )](https://travis-ci.org/SciViews/svMisc)
-[![Win Build Status](https://ci.appveyor.com/api/projects/status/github/SciViews/svMisc?branch=master&svg=true)](http://ci.appveyor.com/project/SciViews/svMisc)
+[![Win Build Status](https://ci.appveyor.com/api/projects/status/github/phgrosjean/svMisc?branch=master&svg=true)](http://ci.appveyor.com/project/phgrosjean/svMisc)
 [![Coverage Status](https://img.shields.io/codecov/c/github/SciViews/svMisc/master.svg)
 ](https://codecov.io/github/SciViews/svMisc?branch=master)
 [![CRAN Status](http://www.r-pkg.org/badges/version/svMisc)](http://cran.r-project.org/package=svMisc)
@@ -39,7 +39,7 @@ devtools::install_github("SciViews/svMisc")
 
 R should install all required dependencies automatically, and then it should compile and install **svMisc**.
 
-Latest devel version in source and Windows binaires formats also available from [appveyor](https://ci.appveyor.com/project/SciViews/svMisc/build/artifacts).
+Latest devel version in source and Windows binaires formats also available from [appveyor](https://ci.appveyor.com/project/phgrosjean/svMisc/build/artifacts).
 
 
 ## Usage
