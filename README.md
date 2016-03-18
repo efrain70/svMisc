@@ -9,7 +9,7 @@
 
 SciViews - miscellaneous functions.
 
-_Build badges are as follows._
+_Build badges are as follows (R versions at the time of the build)._
 - _Status for devel R version for both Linux and Mac OS X at left._
 - _Status for the latest stable version of R under Windows at right._ 
 
@@ -41,7 +41,7 @@ devtools::install_github("SciViews/svMisc")
 
 R should install all required dependencies automatically, and then it should compile and install **svMisc**.
 
-Latest devel version of **svMisc** (source + Windows binaires for the latest stable version of R) is also available from [appveyor](https://ci.appveyor.com/project/phgrosjean/svMisc/build/artifacts).
+Latest devel version of **svMisc** (source + Windows binaires for the latest stable version of R at the time of compilation) is also available from [appveyor](https://ci.appveyor.com/project/phgrosjean/svMisc/build/artifacts).
 
 
 ## Usage
