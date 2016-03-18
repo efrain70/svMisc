@@ -1,5 +1,6 @@
 import(utils, tools)
-importFrom(methods, new, getMethods, isGeneric, showMethods, slot, slotNames)
+importFrom(methods, new, getMethods, isGeneric, showMethods, slot, slotNames, existsFunction, findFunction)
+importFrom(stats, runif)
 
 export(addActions,
        addIcons,
