@@ -7,9 +7,11 @@
 [![CRAN Status](http://www.r-pkg.org/badges/version/svMisc)](http://cran.r-project.org/package=svMisc)
 [![License](https://img.shields.io/badge/license-GPL-blue.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
 
-Miscellaneous functions for SciViews.
+SciViews - miscellaneous functions.
 
-The [R-Forge version](https://r-forge.r-project.org/projects/sciviews/)) is moved to Github on 2016-03-16 (SVN version 569). **Please, do not use R-forge anymore for SciViews development, use this github repository instead.**
+_Build badges are as follows._
+- _Status for latest stable R version for both Linux and Mac OS X at left._
+- _Status for the devel version of R under Windows at right._ 
 
 
 ## Installation
@@ -31,7 +33,7 @@ Make sure you have the **devtools** R package installed:
 install.packages("devtools")
 ```
 
-Use `install_github()` to install the **svMisc** package from Github (master branch):
+Use `install_github()` to install the **svMisc** package from Github (source from **master** branch will be recompiled on your machine):
 
 ```r
 devtools::install_github("SciViews/svMisc")
@@ -39,7 +41,7 @@ devtools::install_github("SciViews/svMisc")
 
 R should install all required dependencies automatically, and then it should compile and install **svMisc**.
 
-Latest devel version in source and Windows binaires formats also available from [appveyor](https://ci.appveyor.com/project/phgrosjean/svMisc/build/artifacts).
+Latest devel version of **svMisc** (source + Windows binaires for the devel version of R) is also available from [appveyor](https://ci.appveyor.com/project/phgrosjean/svMisc/build/artifacts).
 
 
 ## Usage
@@ -56,3 +58,10 @@ Get help about this package:
 library(help = "svMisc")
 help("svMisc-package")
 ```
+
+For further instructions, please, refer to these help pages.
+
+
+## Note to developers
+
+This package used to be developed on R-Forge in the past. However, the latest [R-Forge version](https://r-forge.r-project.org/projects/sciviews/) was moved to this Github repository on 2016-03-16 (SVN version 569). **Please, do not use R-Forge anymore for SciViews development, use this Github repository instead.**
