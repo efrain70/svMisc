@@ -2,6 +2,9 @@ language: r
 sudo: false
 cache: packages
 
+r:
+  - devel
+
 os:
   - linux
   - osx
