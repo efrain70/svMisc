@@ -2,6 +2,8 @@
 
 == Changes in svMisc 0.9-71
 
+* Switch to Github for development; CI added.
+
 * Code added to make svUnit tests compatibles with R Studio and devtools::test().
 
 

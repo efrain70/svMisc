@@ -2,7 +2,7 @@ Package: svMisc
 Type: Package
 Version: 0.9-71
 Date: 2016-03-16
-Title: SciViews GUI API - Miscellaneous functions
+Title: SciViews - Miscellaneous functions
 Author: Philippe Grosjean [aut, cre],
   Romain Francois [ctb],
   Kamil Barton [ctb]

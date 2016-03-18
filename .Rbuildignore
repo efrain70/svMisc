@@ -7,8 +7,7 @@ NEWS.md
 FAQ.md
 Makefile
 .Rprofile
-^\.Rproj\.user$
-^\.*\Rproj$
 ^\.travis\.yml$
 ^appveyor\.yml$
+^\.Rproj\.user$
 ^.*\.Rproj$
