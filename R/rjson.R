@@ -3,17 +3,15 @@
 ## TODO: convert functions, expressions into string, and how to include JS code? or R code?
 ## TODO: allow for special characters \b, \n, \r, \f, \t, \" in names!
 ## TODO: environment and proto
-toRjson <- function (x, attributes = FALSE) 
+toRjson <- function (x, attributes = FALSE)
 {
 	## This is derived from dput()
 	file <- file()
 	on.exit(close(file))
-	if (isTRUE(attributes)) {
-		opts <- c("showAttributes", "S_compatible")
-	} else {
-		opts <- "S_compatible"
-	}
-	
+	# Martin Maechler suggested 'niceNames' used fro R >= 3.5.0
+	opts <- c(if (getRversion() >= "3.5") "niceNames",
+	  if (isTRUE(attributes)) "showAttributes", "S_compatible")
+
 	## Non-named list items are not allowed => make sure we give names to these
 	## Also if attributes == FALSE, we use the string representation of factors
 	rework <- function (x, attributes = FALSE) {
@@ -39,7 +37,7 @@ toRjson <- function (x, attributes = FALSE)
 			for (item in names(x))
 				x[[item]] <- rework(x[[item]], attributes)
 		} else if (!isTRUE(attributes) && inherits(x, c("factor", "Date")))
-			x <- as.character(x) 
+			x <- as.character(x)
 		## Process also all attributes
 		if (isTRUE(attributes)) {
 			a <- attributes(x)
@@ -66,7 +64,8 @@ toRjson <- function (x, attributes = FALSE)
 		return(x)
 	}
 
-    ## Is this an S4 object => process each slot separately
+	### FIXME eventually: In R 3.5.0,  dput() works for S4 objects
+	## Is this an S4 object => process each slot separately
 	if (isS4(x)) {
 		cat('list("Class_" := "', class(x), '"\n', file = file, sep = "")
 		for (n in slotNames(x)) {
@@ -80,14 +79,14 @@ toRjson <- function (x, attributes = FALSE)
 		## Was: .Internal(dput(rework(x, attributes), file, opts))
 		dput(rework(x, attributes), file = file, control = opts)
 	}
-	
+
 	## Now read content from the file
 	res <- readLines(file)
-	
+
 	## dput() indicates sequences of integers with x:y that JavaScript cannot
 	## process... replace these by the equivalent code seq(x, y)
 	res <- gsub("(-?[0-9]+):(-?[0-9]+)", "seq(\\1, \\2)", res)
-	
+
 	## Convert '.Names = ' into '"names" := '
 	res <- gsub(".Names = ", '"names" := ', res, fixed = TRUE)
 	## We need to replace special characters
@@ -112,14 +111,14 @@ toRjson <- function (x, attributes = FALSE)
 	## Convert "@&#&& into " and &&#&@" into "
 	res <- gsub('"@&#&&', '"', res, fixed = TRUE)
 	res <- gsub('&&#&@"', '"', res, fixed = TRUE)
-	## No unnamed items, so, convert 'structure(' into 'list("Data_" := ' 
+	## No unnamed items, so, convert 'structure(' into 'list("Data_" := '
 	res <- gsub("([^a-zA-Z0-9._])structure\\(", '\\1list("Data_" := ', res)
 	res <- sub("^structure\\(", 'list("Data_" := ', res)
 	## Old code!
 	## Convert 'list(' into 'hash('
 	#res <- gsub("([^a-zA-Z0-9._])list\\(", "\\1hash(", res)
 	#res <- sub("^list\\(", "hash(", res)
-	
+
 	## Return  the no quoted results
 	noquote(res)
 }
@@ -135,12 +134,12 @@ evalRjson <- function (rjson) {
 		## otherwise, create a list
 		return(base::list(...))
 	}
-	
+
 	## To convert RJSON data into a R object, simply evaluate it
 	## Note: RJSONp objects will be evaluated correctly too
 	## providing the <callback>() exists and can manage a single
 	## argument (being the RJSOn object converted to R)
-	
+
 	## We need first to convert all ':=' into '='
 	eval(parse(text = gsub(":=", "=", rjson, fixed = TRUE)))
 }

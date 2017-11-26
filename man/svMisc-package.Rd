@@ -12,8 +12,8 @@
   \tabular{ll}{
     Package: \tab svMisc\cr
     Type: \tab Package\cr
-    Version: \tab 0.9-71\cr
-    Date: \tab 2016-06-16\cr
+    Version: \tab 0.9-72\cr
+    Date: \tab 2017-11-26\cr
     License: \tab GPL 2 or above, at your convenience\cr
   }
   % TODO: add description of main functions here. Also add examples

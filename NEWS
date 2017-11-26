@@ -1,5 +1,10 @@
 = svMisc News
 
+== Changes in svMisc 0.9-72
+
+* toRjson() adapted to be compatible with R >= 3.5.0 (thanks to Martin Maechler)
+
+
 == Changes in svMisc 0.9-71
 
 * Switch to Github for development; CI added.
@@ -12,7 +17,7 @@
 * Deprecated functions Args(), CallTip(), clipsource(), Complete(),
   CompletePlus(), getEnvironment(), Parse(), r(), Sys.tempdir(), Sys.userdir()
   are now defunct and eliminated from the package.
-  
+
 * Function pkg() is renamed package().
 
 * Reworked code that was using :::.
@@ -57,7 +62,7 @@
 
 * Call to .Internal(...) in captureAll() eliminated, but ned to call
   .signalSimpleWarning() that is not intended for external use anyway.
-  
+
 * Call to .Internal(dput(....)) in toRjson() eliminated.
 
 
@@ -65,7 +70,7 @@
 
 * Added listToJson() for conversion of lists of character strings into correct
   JSON format.
-  
+
 * Added pkgManXXX() functions to run R code for the SciViews package manager.
 
 
@@ -105,35 +110,35 @@
 * A couple of functions are renamed: Parse() -> parseText(), clipsource() ->
   sourceClipboard(). These functions are declared deprecated, and will become
   defunct in final version 1.0-0 of the package.
-  
+
 * captureAll() now returns NA in case of incomplete line of code parsed by
   parseText(). It also detects if expr is a valid language expression or is
   NA.
-  
+
 * isMac() was not working correctly on Mac OS X Leopard and Snow Leopard
   (bug corrected).
-  
+
 * Sys.userdir() did not expanded tilde in recent R versions (corrected).
 
 * Little change in def() arguments: length.out instead of length to use the same
   name as correcponding argument in rep(). Coercion to logical is now done using
   as.logical()... but the result may differ from previous implementations.
-  
+
 * For listTypes(), the convention has changed. Method/type is now separated by
   an underscore instead as with two dots (like in view_text.default).
-  
+
 * Sys.tempdir() and Sys.userdir() are deprecated in favor of the new more
   general functions systemFile() and systemDir().
-  
+
 * r() is deprecated in favor of pkg() (r is not informative enough and more
   susceptible to be used elsewere too).
-  
+
 * Args() is deprecated in favor of argsTip() and CallTip() is deprecated in
   favor of callTip() (further homogeneization of svMisc function names). The
   new argsTip() and callTip() functions can reflow the tip to a given width, and
   callTip() can also return a short description of the function as well as the
   list of available methods if the tip os asked for a generic function.
-  
+
 * Complete() and CompletePlus() are deprecated in favor of a unique completion()
   function. Code of both original functions has been fused and reworked.
 
@@ -142,10 +147,10 @@
 
 * RJSON objects now use a customized list() function to build lists, but also
   structures and new S4 objects.
-  
+
 * captureAll() has now a 'split' argument that allows to output to the R
   console, while capturing output.
-  
+
 * Bug correction in captureAll(): call[[1L]] is not subsettable.
 
 
@@ -163,7 +168,7 @@
 * A bug in descArgs() with R >= 2.10 did not allowed to gest arguments
   description for functions using the '...' argument. Thanks to Diego Zardetto
   for pointing this bug.
-  
+
 
 == Changes in svMisc 0.9-56
 
@@ -181,7 +186,7 @@
 
 * Cosmetic changes in Rd files to make them compatible with R 2.11 (devel). A
   part of the example of CompletePlus() is eliminated because it raises an error.
-  
+
 
 == Changes in svMisc 0.9-53
 
@@ -190,10 +195,10 @@
 
 * CallTip() does a better work to find current function, i.e., not only after
   the opening parentheses '('.
-  
+
 * Args() now do no place a space anymore between the name of a function and its
   arguments
-  
+
 
 == Changes in svMisc 0.9-52
 

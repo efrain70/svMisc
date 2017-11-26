@@ -1,7 +1,7 @@
 Package: svMisc
 Type: Package
-Version: 0.9-71
-Date: 2016-03-16
+Version: 0.9-72
+Date: 2017-11-26
 Title: SciViews - Miscellaneous Functions
 Author: Philippe Grosjean [aut, cre],
   Romain Francois [ctb],
@@ -13,7 +13,7 @@ Authors@R: c(person("Philippe", "Grosjean", role = c("aut", "cre"),
   person("Kamil", "Barton", role = "ctb",
   email = "kamil.barton@uni-wuerzburg.de"))
 Maintainer: Philippe Grosjean <phgrosjean@sciviews.org>
-Imports: utils, methods, tools
+Imports: utils, methods, stats, tools
 Depends: R (>= 2.13.0)
 Suggests: svUnit, rJava
 Description: Supporting functions for the GUI API (various utility functions).
