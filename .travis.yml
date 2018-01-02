@@ -7,12 +7,10 @@ r:
 
 os:
   - linux
-  - osx
 
 branches:
   only:
     - master
-    - macosx
 
 # Be strict when checking our package, but don't build the manual
 warnings_are_errors: true
